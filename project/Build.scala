@@ -18,13 +18,14 @@ object SkinnyFrameworkBuild extends Build {
     organization := "org.skinny-framework",
     version := currentVersion,
     resolvers ++= Seq(
-      "sonatype releases"  at "https://oss.sonatype.org/content/repositories/releases"
+      "sonatype releases"  at "https://oss.sonatype.org/content/repositories/releases",
+      "scala-2.11.4-staging" at "https://oss.sonatype.org/content/repositories/orgscala-lang-1132"
       //, "sonatype snapshots" at "https://oss.sonatype.org/content/repositories/snapshots"
     ),
     publishTo <<= version { (v: String) => _publishTo(v) },
     publishMavenStyle := true,
     sbtPlugin := false,
-    scalaVersion := "2.11.2",
+    scalaVersion := "2.11.4",
     scalacOptions ++= _scalacOptions,
     publishMavenStyle := true,
     publishArtifact in Test := false,
