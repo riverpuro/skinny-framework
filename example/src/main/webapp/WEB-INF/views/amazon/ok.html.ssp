@@ -1,0 +1,7 @@
+<%@val user: Option[skinny.oauth2.client.OAuth2User] %>
+<%@val amazon: Option[skinny.oauth2.client.amazon.AmazonUser] %>
+<% import skinny.util.JSONStringOps %>
+<h3>Amazon OAuth</h3>
+<hr/>
+<pre><%= user.map(u => JSONStringOps.toPrettyJSONString(u)) %></pre>
+<pre><%= amazon.map(u => JSONStringOps.toPrettyJSONString(u)) %></pre>

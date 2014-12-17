@@ -37,6 +37,7 @@ object Controllers {
     github.mount(ctx)
     google.mount(ctx)
     twitter.mount(ctx)
+    amazon.mount(ctx)
 
     AssetsController.mount(ctx)
   }
@@ -139,6 +140,12 @@ object Controllers {
     val loginUrl = get("/twitter")(loginRedirect).as('login)
     val callbackUrl = get("/twitter/callback")(callback).as('callback)
     val okUrl = get("/twitter/ok")(ok).as('ok)
+  }
+
+  object amazon extends AmazonController with Routes {
+    val loginUrl = get("/amazon")(loginRedirect).as('login)
+    val callbackUrl = get("/amazon/callback")(callback).as('callback)
+    val okUrl = get("/amazon/ok")(ok).as('ok)
   }
 
 }

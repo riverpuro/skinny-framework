@@ -47,6 +47,12 @@ object OAuth2Provider {
   val Salesforce = OAuth2Provider(OAuthProviderType.SALESFORCE)
   val Yammer = OAuth2Provider(OAuthProviderType.YAMMER)
 
+  val Amazon = OAuth2Provider(
+    "amazon",
+    "https://www.amazon.com/ap/oa",
+    "https://api.amazon.com/auth/o2/token\""
+  )
+
   // Basecamp
   // https://github.com/basecamp/api/blob/master/sections/authentication.md
   val Basecamp = OAuth2Provider(
